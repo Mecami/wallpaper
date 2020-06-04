@@ -1,8 +1,8 @@
 <template>
-  <view>
+  <scroll-view scroll-y class="album" @scrolltolower="handleScrollBottom">
     <w-swiper :swiperList="banner"/>
     <w-album-list :albumList="album"/>
-  </view>
+  </scroll-view>
 </template>
 
 <script>
@@ -20,18 +20,42 @@
       return {
         skip: 0,
         banner: [],
-        album: []
+        album: [],
+        isMore: true
       }
     },
     methods: {
       _getAlbumInfo(skip) {
+        if (!this.isMore) {
+          uni.showToast({
+            title: '我们是有底线的',
+            icon: 'none'
+          })
+          return;
+        }
         getAlbumInfo(skip)
           .then(res => {
             console.log(res)
-            this.banner = res[1].data.res.banner
-            this.album = res[1].data.res.album
-            console.log(this.banner,this.album)
+            if (this.banner.length === 0) {
+              this.banner = res[1].data.res.banner
+            }
+            const oldAlbumList = this.album
+            const newAlbumList = res[1].data.res.album
+            if (newAlbumList.length === 0) {
+              this.isMore = false
+              uni.showToast({
+                title: '我们是有底线的',
+                icon: 'none'
+              })
+              return;
+            }
+            this.album = [...oldAlbumList, ...newAlbumList]
+            this.skip += 30
+            // console.log(this.banner,this.album)
           })
+      },
+      handleScrollBottom() {
+        this._getAlbumInfo(this.skip)
       }
     },
     mounted() {
@@ -44,5 +68,7 @@
 </script>
 
 <style scoped>
- 
+  .album {
+    height: calc(100vh - 80rpx);
+  }
 </style>

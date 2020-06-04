@@ -35,7 +35,7 @@ export default {
   },
   data() {
     return {
-      currentIndex: 2
+      currentIndex: 0
     }
   },
   computed: {

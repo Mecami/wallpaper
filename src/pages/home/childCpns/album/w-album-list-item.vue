@@ -1,5 +1,5 @@
 <template>
-  <view class="album-item">
+  <view class="album-item" @click="handleItemClick">
     <image :src="albumItem.cover" mode="aspectFill"/>
     <view class="album-info">
       <view class="album-name">{{albumItem.name}}</view>
@@ -15,6 +15,13 @@
       albumItem: {
         type: Object,
         default: {}
+      }
+    },
+    methods: {
+      handleItemClick() {
+        uni.navigateTo({
+          url: `/pages/albumDetail/albumDetail?id=${this.albumItem.id}`
+        })
       }
     }
   }

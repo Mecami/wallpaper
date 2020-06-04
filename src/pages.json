@@ -1,15 +1,25 @@
 {
 	"pages": [ 
-    
-		{
+    {
+			"path": "pages/imgDetail/imgDetail"
+    },
+    {
 			"path": "pages/home/home",
 			"style": {
 				"navigationBarTitleText": "首页"
 			}
     },
+    
+    
+    
+    {
+			"path": "pages/albumDetail/albumDetail"
+    },
+		
     {
 			"path": "pages/categoryDetail/categoryDetail"
     },
+    
     {
 			"path": "pages/horiScreen/horiScreen",
 			"style": {

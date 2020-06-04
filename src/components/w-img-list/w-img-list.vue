@@ -1,6 +1,7 @@
 <template>
   <view class="img-list">
-    <view class="img-item" v-for="(item, index) in imgList" :key="index">
+    <view class="img-item" v-for="(item, index) in imgList" :key="index"
+          @click="handleImgClick(item)">
       <image :src="item.img" mode="widthFix"/>
     </view>
   </view>
@@ -12,6 +13,11 @@
       imgList: {
         type: Array,
         default: []
+      }
+    },
+    methods: {
+      handleImgClick(item) {
+        console.log(item)
       }
     }
   }

@@ -38,18 +38,18 @@
       }
     },
     methods: {    
-      _getCategoryList(id) {
+      _getCategoryList() {
         const imgTypeObj = this.imgList[this.currentIndex]
         if (!imgTypeObj.isMore) {
            uni.showToast({
                 title: '我们是有底线的',
                 icon: 'none'
            })
-           return;
-        }
+           return ;
+        }        
         const skip = imgTypeObj.skip
         const order = imgTypeObj.ename
-        getCategoryList(id, skip, order)
+        getCategoryList(this.categoryId, skip, order)
           .then(res => {
             console.log(res)
             // 保存对应的数据
@@ -69,12 +69,12 @@
       handleTabClick(index) {
         this.currentIndex = index
         if (this.imgList[this.currentIndex].list.length === 0) {
-           this._getCategoryList(this.categoryId)
+           this._getCategoryList()
         }
        
       },
       handleScrollBottom() {
-        this._getCategoryList(this.categoryId)
+        this._getCategoryList()
       }
     },
     onLoad(options) {
@@ -82,7 +82,7 @@
         title: options.type
       })
       this.categoryId = options.id
-      this._getCategoryList(this.categoryId)
+      this._getCategoryList()
     }
   }
 </script>
