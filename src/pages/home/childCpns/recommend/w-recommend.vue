@@ -83,9 +83,9 @@
       }
     },
     mounted() {
-      uni.setNavigationBarTitle({
-        title: '推荐'
-      })
+      // uni.setNavigationBarTitle({
+      //   title: '推荐'
+      // })
       this._getRecommend(this.recommendSkip)
      
     },

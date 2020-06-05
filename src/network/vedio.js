@@ -1,12 +1,12 @@
 import {request} from './request'
 
-export function getVedioData(url, skip, order) {
+export function getVedioData(options) {
   return request({
-    url,
+    url: options.url,
     data: {
       limit: 30,
-      order,
-      skip
+      order: options.order,
+      skip: options.skip
     }
   })
 }

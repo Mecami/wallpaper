@@ -4,7 +4,7 @@
       <!-- <image src="/static/img/imgDetail/new2.png"/> -->
       <text>热门评论</text>
     </view>
-    <w-comment-info v-for="(item, index) in newComment" :key="index"
+    <w-comment-info v-for="(item, index) in hotComment" :key="index"
                     :commentInfo="item"/>
   </view>
 </template>

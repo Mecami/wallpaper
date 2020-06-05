@@ -1,12 +1,16 @@
 {
 	"pages": [ 
-
     {
 			"path": "pages/home/home",
 			"style": {
-				"navigationBarTitleText": "首页"
+				"navigationBarTitleText": "WALLPAPER"
 			}
     },
+    {
+			"path": "pages/vedioDetail/vedioDetail"
+    },
+
+   
     
     {
 			"path": "pages/imgDetail/imgDetail"
@@ -33,7 +37,7 @@
     {
 			"path": "pages/vedio/vedio",
 			"style": {
-				"navigationBarTitleText": "精选视频"
+				"navigationBarTitleText": "WALLPAPER"
 			}
     },
     {
@@ -45,7 +49,7 @@
     {
 			"path": "pages/profile/profile",
 			"style": {
-				"navigationBarTitleText": "我的"
+				"navigationBarTitleText": "WALLPAPER"
 			}
     }
   ],
@@ -81,7 +85,6 @@
   
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "懂你找图",
 		"navigationBarBackgroundColor": "#ff5777",
 		"backgroundColor": "#F8F8F8"
 	}

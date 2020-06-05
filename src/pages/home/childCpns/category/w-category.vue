@@ -29,9 +29,9 @@
       }
     },
     mounted() {
-      uni.setNavigationBarTitle({
-        title: '分类'
-      })
+      // uni.setNavigationBarTitle({
+      //   title: '分类'
+      // })
       this._getCategoryItems()
     }
   }

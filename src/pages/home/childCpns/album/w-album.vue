@@ -59,9 +59,9 @@
       }
     },
     mounted() {
-      uni.setNavigationBarTitle({
-        title: '专辑'
-      })
+      // uni.setNavigationBarTitle({
+      //   title: '专辑'
+      // })
       this._getAlbumInfo(this.skip)
     }
   }

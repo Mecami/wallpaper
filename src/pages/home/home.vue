@@ -1,7 +1,7 @@
 <template>
   <view id="home">
      <!-- tab-control -->
-     <w-tab-control @tabControlClick="handleTabControlClick"/>
+      <w-tab-control :titles="titles"  @tabControlClick="handleTabControlClick"/>
 
      
        <!-- 推荐模块 -->
@@ -35,7 +35,8 @@ export default {
   },
   data() {
     return {
-      currentIndex: 0
+      currentIndex: 0,
+      titles: ['推荐', '分类', '专辑']
     }
   },
   computed: {

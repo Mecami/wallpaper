@@ -7,7 +7,7 @@
         <text>{{imgInfo.rank}}</text>
       </view>
       <view class="collect">
-        <image src="/static/img/imgDetail/collect2.png"/>
+        <image src="/static/img/imgDetail/star.png"/>
         <text>收藏</text>
       </view>
     </view>
