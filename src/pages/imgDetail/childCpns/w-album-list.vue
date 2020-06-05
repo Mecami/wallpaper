@@ -25,7 +25,7 @@
 
 <style scoped>
   .album-list {
-    padding: 16rpx;
+    padding: 20rpx;
     border-bottom: 12rpx solid #eee;
   }
   .relevant {

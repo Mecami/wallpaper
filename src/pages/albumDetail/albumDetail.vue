@@ -57,6 +57,9 @@
             //专辑图片列表           
             const newAlbumList = res.wallpaper
             if (newAlbumList.length === 0) {
+              if (this.albumList.length === 0) {
+                return ;
+              }
               this.isMore = false
               uni.showToast({
                 title: '我们是有底线的',
@@ -75,8 +78,8 @@
       uni.setNavigationBarTitle({
         title: '专辑详情'
       })
-      // this.albumId = options.id
-      this.albumId = '5e09c739e7bce739af7638f5'
+      this.albumId = options.id
+      // this.albumId = '5e09c739e7bce739af7638f5'
       this._getAlbumDetail()
     },
     onReachBottom() {

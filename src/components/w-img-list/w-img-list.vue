@@ -1,7 +1,7 @@
 <template>
   <view class="img-list">
     <view class="img-item" v-for="(item, index) in imgList" :key="index"
-          @click="handleImgClick(item)">
+          @click="handleImgClick(index)">
       <image :src="item.img" mode="widthFix"/>
     </view>
   </view>
@@ -16,8 +16,13 @@
       }
     },
     methods: {
-      handleImgClick(item) {
-        console.log(item)
+      handleImgClick(index) {
+        getApp().globalData.imgList = this.imgList
+        getApp().globalData.imgListIndex = index
+
+        uni.navigateTo({
+          url: '/pages/imgDetail/imgDetail'
+        })
       }
     }
   }

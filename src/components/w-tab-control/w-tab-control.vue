@@ -13,7 +13,7 @@
     props: {
       titles: {
         type: Array,
-        default: ['推荐', '分类', '专辑']
+        default: []
       }
     },
     data() {

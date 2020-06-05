@@ -19,6 +19,7 @@
     },
     methods: {
       handleItemClick() {
+        console.log(this.albumItem)
         uni.navigateTo({
           url: `/pages/albumDetail/albumDetail?id=${this.albumItem.id}`
         })

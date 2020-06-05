@@ -1,11 +1,11 @@
 <template>
-  <view class="user-info">
+  <view class="user-info" v-if="Object.keys(userInfo).length !== 0">
     <view class="avatar">
       <image :src="userInfo.avatar"/>
     </view>
     <view class="user-content">
       <view class="user-name">
-        {{userInfo.userName}}
+        {{userInfo.name}}
       </view>
       <view class="atime">
         {{userInfo.cnTime}}
@@ -35,8 +35,8 @@
     margin-right: 16rpx;
   }
   .avatar image {
-    width: 100rpx;
-    height: 100rpx;
+    width: 80rpx;
+    height: 80rpx;
     border-radius: 50%;
   }
   .user-content {
@@ -46,12 +46,12 @@
     padding-bottom: 6rpx; */
   }
   .user-name {
-    font-size: 36rpx;
-    color: #444;
-    margin-bottom: 12rpx;
+    font-size: 32rpx;
+    /* color: #555; */
+    margin-bottom: 4rpx;
   }
   .atime {
     color: #ccc;
-    font-size: 28rpx;
+    font-size: 24rpx;
   }
 </style>

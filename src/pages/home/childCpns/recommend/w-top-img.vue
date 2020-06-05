@@ -1,7 +1,7 @@
 <template>
   <view class="images">
     <view class="img-item" v-for="(item, index) in imgList" :key="index">
-      <image :src="item.thumb" mode="widthFix"></image>
+      <image :src="item.thumb" mode="widthFix" @click="handleImgClick(item.id)"></image>
     </view>
   </view>
 </template>
@@ -12,6 +12,13 @@
       imgList: {
         type: Array,
         default: []
+      }
+    },
+    methods: {
+      handleImgClick(id) {
+        //  uni.navigateTo({
+        //   url: `/pages/albumDetail/albumDetail?id=${id}`
+        // })
       }
     }
   }
